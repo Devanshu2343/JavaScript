@@ -1,21 +1,33 @@
 const fs = require('fs');
-
-// Read the content of input.txt file asynchronously
-fs.readFile('input.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.error('Error reading file:', err);
-    return;
-  }
-
-  // Reverse the content
-  const reversedContent = data.split('\n').reverse().join('\n');
-
-  // Write the reversed content to output.txt file asynchronously
-  fs.writeFile('output.txt', reversedContent, 'utf8', (err) => {
-    if (err) {
-      console.error('Error writing file:', err);
-      return;
+// read the content of input.tx
+fs.readFile('input.txt','utf-8',(err,data)=> {
+    if(err){
+        console.log("Error");
+        return;
     }
-    console.log('Reversed content has been written to output.txt');
-  });
-});
+    else{
+        const body=[];
+        body.push(data);
+        console.log(body);
+    }
+    const a = data.split('').reverse().join('');
+   // const a = data.split('\n').reverse().join('\n');
+
+    // Write the reversed content to output.txt
+    fs.writeFile('output.txt', a , (err) => {
+        if(err){
+            console.log("error");
+            return;
+        }
+        console.log('Reversed content has been written to output.txt');
+    })
+})
+
+
+
+
+
+
+  
+
+ 
