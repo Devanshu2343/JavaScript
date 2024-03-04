@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differnce of Two Numbers</title>
+</head>
+<body>
+    <h2>Enter two numbers to find their Differnce:</h2>
+    <input type="number" id="num1" placeholder="Enter the first number">
+    <input type="number" id="num2" placeholder="Enter the second number">
+    <button onclick="calculateDifference()">Calculate Difference</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateDifference() {
+            // Get the input values
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+
+            // Check if the inputs are valid numbers
+            if (!isNaN(num1) && !isNaN(num2)) {
+                // Calculate the Difference
+                let diff = num1 + num2;
+                
+                // Display the rresult
+                document.getElementById('result').innerText = "The Difference of " + num1 + " and " + num2 + " is: " + diff;
+            } else {
+                 // Alerting  for invalid valid input
+                document.getElementById('result').innerText = " enter valid numbers";
+            }
+        }
+    </script>
+</body>
+</html>
